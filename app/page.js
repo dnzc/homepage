@@ -22,7 +22,7 @@ export default function Home() {
           
           <div className="space-y-2">
             <p>I am a third year Mathematics undergraduate at the University of Cambridge. This summer I've just finished a research internship at <MyLink data="https://silvaco.com/">Silvaco</MyLink>, and for now I'm working on a quant trading project.</p>
-            <p>I maintain some maths notes at <MyLink data="https://notes.danielc.rocks">notes.danielc.rocks</MyLink> and <MyLink data="https://tripos.guru">tripos.guru</MyLink>.</p>
+            <p>Please feel free to give me anonymous feedback, suggestions, thoughts, jokes etc. via my <MyLink data="https://www.admonymous.co/chen">admonymous page</MyLink>.</p>
           </div>
           <div className="text-center mt-4 flex justify-center gap-6">
             <MyLink data="mailto:dc872@cam.ac.uk">
