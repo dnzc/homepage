@@ -1,103 +1,111 @@
-import Image from "next/image";
+import MyLink from './components/MyLink';
+import Paper from './components/Paper';
+import ProjectCard from './components/ProjectCard';
+import { HiMail } from 'react-icons/hi';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+    <div className="max-w-3xl mx-auto p-5 space-y-8">
+      <section className="flex mt-8">
+        <div className="w-3/4 pr-5">
+          <p className="text-center mb-5 text-4xl">Daniel Chen</p>
+          
+          <div className="space-y-2">
+            <p>I am a third year Mathematics undergraduate at the University of Cambridge. This summer I've just finished a research internship at <MyLink href="https://silvaco.com/">Silvaco</MyLink>, and for now I'm working on a quant trading project.</p>
+            <p>I maintain some maths notes at <MyLink href="https://notes.danielc.rocks">notes.danielc.rocks</MyLink> and <MyLink href="https://tripos.guru">tripos.guru</MyLink>.</p>
+          </div>
+          <div className="text-center mt-4 flex justify-center gap-6">
+            <MyLink href="mailto:dc872@cam.ac.uk">
+              <HiMail className="w-6 h-6" />
+            </MyLink>
+            <MyLink href="https://linkedin.com/in/daniel-z-chen">
+              <FaLinkedin className="w-6 h-6" />
+            </MyLink>
+            <MyLink href="https://github.com/dnzc">
+              <FaGithub className="w-6 h-6" />
+            </MyLink>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        
+        <div className="w-1/4">
+          <img 
+            src="/image.png" 
+            alt="Profile" 
+            className="w-full h-auto rounded-full aspect-square min-w-[100px]"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+        </div>
+      </section>
+      
+      <section>
+        <h2 className="text-2xl font-normal mb-2">Research</h2>
+
+        <Paper 
+          title="Associated Permutations of Complete Non-Ambiguous Trees"
+          titleHref="https://doi.org/10.46298/dmtcs.11169"
+          authors="Daniel Chen, Sebastian Ohlig"
+          subtitle={<><em>Discrete Mathematics & Theoretical Computer Science</em>, vol 25:2 (April 2024)</>}
+          image="/entries/cnat.png"
+          links={[
+            { label: "full text", url: "https://dmtcs.episciences.org/13114/pdf" },
+            { 
+              label: "bibtex", 
+              type: "copy",
+              content: `@article{chen2024associated,
+  title={Associated Permutations of Complete Non-Ambiguous Trees},
+  author={Chen, Daniel and Ohlig, Sebastian},
+  journal={Discrete Mathematics \\& Theoretical Computer Science},
+  volume={25},
+  number={2},
+  year={2024},
+  publisher={Episciences}
+}`
+            },
+            { label: "citations", url: "https://scholar.google.com/scholar?cites=821849534694441299" }
+          ]}
+          description={<>As part of <MyLink href="https://promys-europe.org/about-promys-europe/">PROMYS Europe</MyLink> 2022, I worked in a pair on a six-week research project in combinatorics, culminating in proving an open conjecture at age 17. We established a new bijection from upper-diagonal CNMs to tree-like tableaux, and after the program we continued to discover new ideas, defining a novel row-and-column swapping operation.</>}
+        />
+
+      </section>
+
+      <section>
+        <h2 className="text-lg font-normal mb-2">arXiv e-prints</h2>
+        <p><MyLink href="https://arxiv.org/abs/2404.04058">Alternative Proof of the Determinant of Complete Non-Ambiguous Trees</MyLink> (April 2024)</p>
+        <p><MyLink href="https://arxiv.org/abs/2308.14635">Expected Number of Dice Rolls Until an Increasing Run of Three</MyLink> (October 2023)</p>
+      </section>
+      
+      <section>
+        <h2 className="text-2xl font-normal mb-4">Other Projects</h2>
+        <div className="flex flex-wrap gap-4 items-start">
+
+          <ProjectCard
+            title="Maths Notes"
+            description="A custom static site generator built for creating and maintaining mathematical notes across two websites."
+            link="https://github.com/dnzc/notes"
+            websites={[
+              { label: "notes.danielc.rocks", url: "https://notes.danielc.rocks" },
+              { label: "tripos.guru", url: "https://tripos.guru" }
+            ]}
+            tags={["Python", "Jinja2", "Next.js"]}
+            image="/entries/notes.png"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+
+          <ProjectCard
+            title="Physarum Slime"
+            description="A physarum slime simulation where agents move around, leaving diffusing trails for other agents to follow."
+            link="https://github.com/dnzc/OFProjects/tree/main/physarumSlime"
+            tags={["C++", "Shader", "Simulation"]}
+            image="/entries/slime.png"
           />
-          Go to nextjs.org →
-        </a>
+
+        </div>
+      </section>
+      
+      <footer className="text-xs text-right">
+        The source code for this site can be found <MyLink href="https://github.com/dnzc/homepage">here</MyLink>. Design inspired by <MyLink href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron's</MyLink> site.
       </footer>
     </div>
+  </>
   );
 }
