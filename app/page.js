@@ -49,18 +49,19 @@ export default function Home() {
       <section>
         <h2 className="text-2xl font-normal xs:mb-2 text-center xs:text-left">Research</h2>
 
-        <Paper 
-          title="Associated Permutations of Complete Non-Ambiguous Trees"
-          titleHref="https://doi.org/10.46298/dmtcs.11169"
-          authors="Daniel Chen, Sebastian Ohlig"
-          subtitle={<><em>Discrete Mathematics & Theoretical Computer Science</em>, vol 25:2 (April 2024)</>}
-          image="/entries/cnat.png"
-          links={[
-            { label: "full text", url: "https://dmtcs.episciences.org/13114/pdf" },
-            { 
-              label: "bibtex", 
-              type: "copy",
-              content: `@article{chen2024associated,
+        <div className="research-papers">
+          <Paper 
+            title="Associated Permutations of Complete Non-Ambiguous Trees"
+            titleHref="https://doi.org/10.46298/dmtcs.11169"
+            authors="Daniel Chen, Sebastian Ohlig"
+            subtitle={<><em>Discrete Mathematics & Theoretical Computer Science</em>, vol 25:2 (April 2024)</>}
+            image="/entries/cnat.png"
+            links={[
+              { label: "full text", url: "https://dmtcs.episciences.org/13114/pdf" },
+              { 
+                label: "bibtex", 
+                type: "copy",
+                content: `@article{chen2024associated,
   title={Associated Permutations of Complete Non-Ambiguous Trees},
   author={Chen, Daniel and Ohlig, Sebastian},
   journal={Discrete Mathematics \\& Theoretical Computer Science},
@@ -69,11 +70,12 @@ export default function Home() {
   year={2024},
   publisher={Episciences}
 }`
-            },
-            { label: "citations", url: "https://scholar.google.com/scholar?cites=821849534694441299" }
-          ]}
-          description={<>As part of <MyLink data="https://promys-europe.org/about-promys-europe/">PROMYS Europe</MyLink> 2022, I worked in a pair on a six-week research project in combinatorics, culminating in proving an open conjecture at age 17. We established a new bijection from upper-diagonal CNMs to tree-like tableaux, and after the program we continued to discover new ideas, defining a novel row-and-column swapping operation.</>}
-        />
+              },
+              { label: "citations", url: "https://scholar.google.com/scholar?cites=821849534694441299" }
+            ]}
+            description={<>As part of <MyLink data="https://promys-europe.org/about-promys-europe/">PROMYS Europe</MyLink> 2022, I worked in a pair on a six-week research project in combinatorics, culminating in proving an open conjecture at age 17. We established a new bijection from upper-diagonal CNMs to tree-like tableaux, and after the program we continued to discover new ideas, defining a novel row-and-column swapping operation.</>}
+          />
+        </div>
 
       </section>
 

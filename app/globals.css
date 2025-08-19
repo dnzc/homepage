@@ -24,3 +24,8 @@ body {
   font-family: var(--font-lato);
   @apply !text-black;
 }
+
+.research-papers > div:last-child {
+  /* no divider below last child */
+  @apply border-b-0 xs:border-b-0 !pb-0;
+}
