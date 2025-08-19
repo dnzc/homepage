@@ -8,28 +8,36 @@ export default function Home() {
   return (
     <>
     <div className="max-w-3xl mx-auto p-5 space-y-8">
-      <section className="flex mt-8">
-        <div className="w-3/4 pr-5">
+      <section className="flex flex-col xs:flex-row mt-8">
+        <div className="w-full xs:w-3/4 xs:pr-5 text-center xs:text-left">
           <p className="text-center mb-5 text-4xl">Daniel Chen</p>
           
+          <div className="xs:hidden mb-6 flex justify-center">
+            <img 
+              src="/image.png" 
+              alt="Profile" 
+              className="w-32 h-32 rounded-full object-cover"
+            />
+          </div>
+          
           <div className="space-y-2">
-            <p>I am a third year Mathematics undergraduate at the University of Cambridge. This summer I've just finished a research internship at <MyLink href="https://silvaco.com/">Silvaco</MyLink>, and for now I'm working on a quant trading project.</p>
-            <p>I maintain some maths notes at <MyLink href="https://notes.danielc.rocks">notes.danielc.rocks</MyLink> and <MyLink href="https://tripos.guru">tripos.guru</MyLink>.</p>
+            <p>I am a third year Mathematics undergraduate at the University of Cambridge. This summer I've just finished a research internship at <MyLink data="https://silvaco.com/">Silvaco</MyLink>, and for now I'm working on a quant trading project.</p>
+            <p>I maintain some maths notes at <MyLink data="https://notes.danielc.rocks">notes.danielc.rocks</MyLink> and <MyLink data="https://tripos.guru">tripos.guru</MyLink>.</p>
           </div>
           <div className="text-center mt-4 flex justify-center gap-6">
-            <MyLink href="mailto:dc872@cam.ac.uk">
+            <MyLink data="mailto:dc872@cam.ac.uk">
               <HiMail className="w-6 h-6" />
             </MyLink>
-            <MyLink href="https://linkedin.com/in/daniel-z-chen">
+            <MyLink data="https://linkedin.com/in/daniel-z-chen">
               <FaLinkedin className="w-6 h-6" />
             </MyLink>
-            <MyLink href="https://github.com/dnzc">
+            <MyLink data="https://github.com/dnzc">
               <FaGithub className="w-6 h-6" />
             </MyLink>
           </div>
         </div>
         
-        <div className="w-1/4">
+        <div className="hidden xs:block w-1/4">
           <img 
             src="/image.png" 
             alt="Profile" 
@@ -39,7 +47,7 @@ export default function Home() {
       </section>
       
       <section>
-        <h2 className="text-2xl font-normal mb-2">Research</h2>
+        <h2 className="text-2xl font-normal xs:mb-2 text-center xs:text-left">Research</h2>
 
         <Paper 
           title="Associated Permutations of Complete Non-Ambiguous Trees"
@@ -64,20 +72,20 @@ export default function Home() {
             },
             { label: "citations", url: "https://scholar.google.com/scholar?cites=821849534694441299" }
           ]}
-          description={<>As part of <MyLink href="https://promys-europe.org/about-promys-europe/">PROMYS Europe</MyLink> 2022, I worked in a pair on a six-week research project in combinatorics, culminating in proving an open conjecture at age 17. We established a new bijection from upper-diagonal CNMs to tree-like tableaux, and after the program we continued to discover new ideas, defining a novel row-and-column swapping operation.</>}
+          description={<>As part of <MyLink data="https://promys-europe.org/about-promys-europe/">PROMYS Europe</MyLink> 2022, I worked in a pair on a six-week research project in combinatorics, culminating in proving an open conjecture at age 17. We established a new bijection from upper-diagonal CNMs to tree-like tableaux, and after the program we continued to discover new ideas, defining a novel row-and-column swapping operation.</>}
         />
 
       </section>
 
-      <section>
-        <h2 className="text-lg font-normal mb-2">arXiv e-prints</h2>
-        <p><MyLink href="https://arxiv.org/abs/2404.04058">Alternative Proof of the Determinant of Complete Non-Ambiguous Trees</MyLink> (April 2024)</p>
-        <p><MyLink href="https://arxiv.org/abs/2308.14635">Expected Number of Dice Rolls Until an Increasing Run of Three</MyLink> (October 2023)</p>
+      <section className="space-y-2">
+        <h2 className="text-lg font-normal mb-2 text-center xs:text-left">arXiv e-prints</h2>
+        <p className="text-center xs:text-left"><MyLink data="https://arxiv.org/abs/2404.04058">Alternative Proof of the Determinant of Complete Non-Ambiguous Trees</MyLink> (April 2024)</p>
+        <p className="text-center xs:text-left"><MyLink data="https://arxiv.org/abs/2308.14635">Expected Number of Dice Rolls Until an Increasing Run of Three</MyLink> (October 2023)</p>
       </section>
       
       <section>
-        <h2 className="text-2xl font-normal mb-4">Other Projects</h2>
-        <div className="flex flex-wrap gap-4 items-start">
+        <h2 className="text-2xl font-normal mb-4 text-center xs:text-left">Other Projects</h2>
+        <div className="flex flex-wrap gap-4 items-start justify-center xs:justify-start">
 
           <ProjectCard
             title="Maths Notes"
@@ -102,8 +110,8 @@ export default function Home() {
         </div>
       </section>
       
-      <footer className="text-xs text-right">
-        The source code for this site can be found <MyLink href="https://github.com/dnzc/homepage">here</MyLink>. Design inspired by <MyLink href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron's</MyLink> site.
+      <footer className="text-xs text-center xs:text-right">
+        The source code for this site can be found <MyLink data="https://github.com/dnzc/homepage">here</MyLink>. Design inspired by <MyLink data="https://github.com/jonbarron/jonbarron.github.io">Jon Barron's</MyLink> site.
       </footer>
     </div>
   </>

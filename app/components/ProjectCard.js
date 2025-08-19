@@ -1,6 +1,5 @@
 "use client"
 
-import Link from 'next/link';
 import { HiLink } from 'react-icons/hi';
 
 export default function ProjectCard({ 
