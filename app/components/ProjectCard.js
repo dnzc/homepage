@@ -1,12 +1,9 @@
-"use client"
-
 import { HiLink } from 'react-icons/hi';
 
 export default function ProjectCard({ 
   title, 
   description, 
   link,
-  websites = [],
   tags = [],
   image 
 }) {
@@ -31,19 +28,15 @@ export default function ProjectCard({
           {description}
         </p>
 
-        {websites.length > 0 && (
+        {link && (
           <div className="flex gap-2 mb-3">
-            {websites.map((website, index) => (
-              <a 
-                key={index}
-                href={website.url}
-                className="text-link hover:underline flex items-center gap-1 text-xs"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <HiLink className="w-3 h-3" />
-                {website.label}
-              </a>
-            ))}
+            <a 
+              href={link.url}
+              className="text-link hover:underline flex items-center gap-1 text-xs"
+            >
+              <HiLink className="w-3 h-3" />
+              {link.label}
+            </a>
           </div>
         )}
         
@@ -63,17 +56,8 @@ export default function ProjectCard({
     </>
   );
 
-  const handleCardClick = () => {
-    if (link) {
-      window.location.href = link;
-    }
-  };
-
   return (
-    <div 
-      className={`bg-white shadow-md rounded-lg overflow-hidden w-60 ${link ? 'cursor-pointer hover:shadow-2xl transition-shadow duration-200' : ''}`}
-      onClick={link ? handleCardClick : undefined}
-    >
+    <div className="bg-white shadow-md rounded-lg overflow-hidden w-60">
       <CardContent />
     </div>
   );

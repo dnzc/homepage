@@ -90,13 +90,9 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 items-start justify-center xs:justify-start">
 
           <ProjectCard
-            title="Maths Notes"
-            description="A custom static site generator built for creating and maintaining mathematical notes across two websites."
-            link="https://github.com/dnzc/notes"
-            websites={[
-              { label: "notes.danielc.rocks", url: "https://notes.danielc.rocks" },
-              { label: "tripos.guru", url: "https://tripos.guru" }
-            ]}
+            title="Tripos Guru"
+            description="A collection of interactive maths notes designed for maximum learning speed, built with a custom static site generator."
+            link={{ label: "tripos.guru", url: "https://tripos.guru" }}
             tags={["Python", "Jinja2", "Next.js"]}
             image="/entries/notes.png"
           />
@@ -104,7 +100,7 @@ export default function Home() {
           <ProjectCard
             title="Physarum Slime"
             description="A physarum slime simulation where agents move around, leaving diffusing trails for other agents to follow."
-            link="https://github.com/dnzc/OFProjects/tree/main/physarumSlime"
+            link={{ label: "github.com", url: "https://github.com/dnzc/OFProjects/tree/main/physarumSlime" }}
             tags={["C++", "Shader", "Simulation"]}
             image="/entries/slime.png"
           />
