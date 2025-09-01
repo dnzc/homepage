@@ -10,8 +10,8 @@ export default function Paper({
   image 
 }) {
   return (
-    <div className="flex flex-col xs:flex-row pb-4 xs:pb-8 border-b xs:border-b-0 border-black">
-      <div className="w-full xs:w-1/5 xs:pr-4 mb-2 xs:mb-0 mt-4 xs:mt-2">
+    <div className="flex items-center flex-col xs:flex-row pb-4 xs:pb-8 border-b xs:border-b-0 border-black">
+      <div className="w-full xs:w-1/5 xs:pr-4 mb-2 xs:mb-0 mt-4 xs:mt-2 pb-4">
         {image ? (
           <img src={image} alt={title} className="w-full h-auto mx-auto xs:mx-0 max-w-[120px]" />
         ) : (
@@ -19,7 +19,7 @@ export default function Paper({
         )}
       </div>
       <div className="flex-1 text-center xs:text-left">
-        <p className="font-bold"><MyLink data={titleHref}>{title}</MyLink></p>
+        <p className="text-lg">{title}</p>
         <p>{authors}</p>
         <p>{subtitle}</p>
         {links.length > 0 && (

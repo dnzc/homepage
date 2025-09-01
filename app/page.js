@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           
           <div className="space-y-2">
-            <p>I am a third year Mathematics undergraduate at the University of Cambridge. This summer I've just finished a research internship at <MyLink data="https://silvaco.com/">Silvaco</MyLink>, and for now I'm working on a quant trading project.</p>
+            <p>I am a third year Mathematics undergraduate at the University of Cambridge.</p>
             <p>Please feel free to give me anonymous feedback, suggestions, thoughts, jokes etc. via my <MyLink data="https://www.admonymous.co/chen">admonymous page</MyLink>.</p>
           </div>
           <div className="text-center mt-4 flex justify-center gap-6">
@@ -51,13 +51,29 @@ export default function Home() {
 
         <div className="research-papers">
           <Paper 
+            title="Denoising the Result of Monte Carlo Ion Implantation"
+            titleHref="https://musical-lamington-3ffa7c.netlify.app"
+            authors="Daniel Chen, Silvaco TCAD"
+            subtitle={<><em>Presentation slides will be uploaded soon</em></>}
+            image="/entries/montecarlo.png"
+            links={[
+              { label: "presentation photos", url: "https://musical-lamington-3ffa7c.netlify.app" },
+            ]}
+            description={
+              <>
+              Eight-week research project at <MyLink data="https://silvaco.com/">Silvaco</MyLink>.
+              One of the important processes during semiconductor manufacturing is implantation, in which a wafer is bombarded with ions to modify its electrical properties. Computer simulations of this process produce noisy results; in this project, a novel smoothing algorithm is developed that halves the mean-squared error compared to previous methods.
+              </>
+            }
+          />
+          <Paper 
             title="Associated Permutations of Complete Non-Ambiguous Trees"
             titleHref="https://doi.org/10.46298/dmtcs.11169"
             authors="Daniel Chen, Sebastian Ohlig"
             subtitle={<><em>Discrete Mathematics & Theoretical Computer Science</em>, vol 25:2 (April 2024)</>}
             image="/entries/cnat.png"
             links={[
-              { label: "full text", url: "https://dmtcs.episciences.org/13114/pdf" },
+              { label: "journal page", url: "https://dmtcs.episciences.org/13114" },
               { 
                 label: "bibtex", 
                 type: "copy",
