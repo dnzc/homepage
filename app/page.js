@@ -106,9 +106,9 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 items-start justify-center xs:justify-start">
 
           <ProjectCard
-            title="Tripos Guru"
+            title="Theorem Guide"
             description="A collection of interactive maths notes designed for maximum learning speed, built with a custom static site generator."
-            link={{ label: "tripos.guru", url: "https://tripos.guru" }}
+            link={{ label: "theorem.guide", url: "https://theorem.guide" }}
             tags={["Python", "Jinja2", "Next.js"]}
             image="/entries/notes.png"
           />
