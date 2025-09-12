@@ -106,17 +106,18 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 items-start justify-center xs:justify-start">
 
           <ProjectCard
-            title="Theorem Guide"
+            title="Theorem Town"
             description="A collection of interactive maths notes designed for maximum learning speed, built with a custom static site generator."
-            link={{ label: "theorem.guide", url: "https://theorem.guide" }}
+            link={{ label: "theoremtown.com", url: "https://theoremtown.com" }}
+            githubRepo="dnzc/theorem-town"
             tags={["Python", "Jinja2", "Next.js"]}
-            image="/entries/notes.png"
+            image="/entries/theorem-town.png"
           />
 
           <ProjectCard
             title="Physarum Slime"
-            description="A physarum slime simulation where agents move around, leaving diffusing trails for other agents to follow."
-            link={{ label: "github.com", url: "https://github.com/dnzc/OFProjects/tree/main/physarumSlime" }}
+            description="A simulation where agents move around, leaving diffusing trails for other agents to follow. Creates pretty pictures."
+            githubRepo="dnzc/OFProjects/tree/main/physarumSlime"
             tags={["C++", "Shader", "Simulation"]}
             image="/entries/slime.png"
           />

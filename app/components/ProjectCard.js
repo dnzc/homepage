@@ -1,12 +1,52 @@
+'use client'
+
 import { HiLink } from 'react-icons/hi';
+import { useState, useEffect } from 'react';
 
 export default function ProjectCard({ 
   title, 
   description, 
   link,
   tags = [],
-  image 
+  image,
+  githubRepo = null
 }) {
+  const [commitCount, setCommitCount] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (githubRepo) {
+      setLoading(true);
+      // Extract the base repo (owner/repo) from the full path
+      const baseRepo = githubRepo.split('/').slice(0, 2).join('/');
+      
+      fetch(`https://api.github.com/repos/${baseRepo}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.default_branch) {
+            return fetch(`https://api.github.com/repos/${baseRepo}/commits?per_page=1&sha=${data.default_branch}`);
+          }
+        })
+        .then(response => {
+          if (response) {
+            const linkHeader = response.headers.get('Link');
+            if (linkHeader) {
+              const match = linkHeader.match(/page=(\d+)>; rel="last"/);
+              if (match) {
+                setCommitCount(parseInt(match[1]));
+              }
+            } else {
+              return response.json().then(commits => setCommitCount(commits.length));
+            }
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching commit count:', error);
+          setCommitCount(null);
+        })
+        .finally(() => setLoading(false));
+    }
+  }, [githubRepo]);
   const CardContent = () => (
     <>
       {image && (
@@ -28,8 +68,8 @@ export default function ProjectCard({
           {description}
         </p>
 
-        {link && (
-          <div className="flex gap-2 mb-3">
+        <div className="flex gap-2 mb-3 flex-wrap">
+          {link && (
             <a 
               href={link.url}
               className="text-link hover:underline flex items-center gap-1 text-xs"
@@ -37,8 +77,24 @@ export default function ProjectCard({
               <HiLink className="w-3 h-3" />
               {link.label}
             </a>
-          </div>
-        )}
+          )}
+          
+          {githubRepo && (
+            <a 
+              href={`https://github.com/${githubRepo}`}
+              className="text-link hover:underline flex items-center gap-1 text-xs"
+            >
+              <HiLink className="w-3 h-3" />
+              {loading ? (
+                <span className="text-gray-500">GitHub (loading...)</span>
+              ) : commitCount !== null ? (
+                <span>GitHub ({commitCount} commits)</span>
+              ) : (
+                <span>GitHub</span>
+              )}
+            </a>
+          )}
+        </div>
         
         {tags.length > 0 && (
           <div className="flex flex-wrap gap-1">
