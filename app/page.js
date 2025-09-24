@@ -1,6 +1,5 @@
 import MyLink from './components/MyLink';
-import Paper from './components/Paper';
-import ProjectCard from './components/ProjectCard';
+import Project from './components/Project';
 import { HiMail } from 'react-icons/hi';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
@@ -22,6 +21,9 @@ export default function Home() {
           
           <div className="space-y-2">
             <p>I am a third year Mathematics undergraduate at the University of Cambridge.</p>
+
+            <p>I maintain some interactive lecture notes and explanations at <MyLink data="https://theoremtown.com">theoremtown.com</MyLink>.</p>
+
             <p>Please feel free to give me anonymous feedback, suggestions, thoughts, jokes etc. via my <MyLink data="https://www.admonymous.co/chen">admonymous page</MyLink>.</p>
           </div>
           <div className="text-center mt-4 flex justify-center gap-6">
@@ -50,7 +52,7 @@ export default function Home() {
         <h2 className="text-2xl font-normal xs:mb-2 text-center xs:text-left">Research</h2>
 
         <div className="research-papers">
-          <Paper 
+          <Project 
             title="Denoising the Result of Monte Carlo Ion Implantation"
             titleHref="https://musical-lamington-3ffa7c.netlify.app"
             authors="Daniel Chen, Silvaco TCAD"
@@ -66,7 +68,7 @@ export default function Home() {
               </>
             }
           />
-          <Paper 
+          <Project 
             title="Associated Permutations of Complete Non-Ambiguous Trees"
             titleHref="https://doi.org/10.46298/dmtcs.11169"
             authors="Daniel Chen, Sebastian Ohlig"
@@ -99,30 +101,6 @@ export default function Home() {
         <h2 className="text-lg font-normal mb-2 text-center xs:text-left">arXiv e-prints</h2>
         <p className="text-center xs:text-left"><MyLink data="https://arxiv.org/abs/2404.04058">Alternative Proof of the Determinant of Complete Non-Ambiguous Trees</MyLink> (April 2024)</p>
         <p className="text-center xs:text-left"><MyLink data="https://arxiv.org/abs/2308.14635">Expected Number of Dice Rolls Until an Increasing Run of Three</MyLink> (October 2023)</p>
-      </section>
-      
-      <section>
-        <h2 className="text-2xl font-normal mb-4 text-center xs:text-left">Other Projects</h2>
-        <div className="flex flex-wrap gap-4 items-start justify-center xs:justify-start">
-
-          <ProjectCard
-            title="Theorem Town"
-            description="A collection of interactive maths notes designed for maximum learning speed, built with a custom static site generator."
-            link={{ label: "theoremtown.com", url: "https://theoremtown.com" }}
-            githubRepo="dnzc/theorem-town"
-            tags={["Python", "Jinja2", "Next.js"]}
-            image="/entries/theorem-town.png"
-          />
-
-          <ProjectCard
-            title="Physarum Slime"
-            description="A simulation where agents move around, leaving diffusing trails for other agents to follow. Creates pretty pictures."
-            githubRepo="dnzc/OFProjects/tree/main/physarumSlime"
-            tags={["C++", "Shader", "Simulation"]}
-            image="/entries/slime.png"
-          />
-
-        </div>
       </section>
       
       <footer className="text-xs text-center xs:text-right">

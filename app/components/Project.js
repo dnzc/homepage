@@ -1,8 +1,7 @@
 import MyLink from './MyLink';
 
-export default function Paper({ 
+export default function Project({ 
   title, 
-  titleHref,
   authors, 
   subtitle, 
   links = [], 
